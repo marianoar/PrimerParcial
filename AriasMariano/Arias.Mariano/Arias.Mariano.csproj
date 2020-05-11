@@ -52,6 +52,12 @@
     <Compile Include="FrmAltaAlumno.Designer.cs">
       <DependentUpon>FrmAltaAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBuscarAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarAlumno.Designer.cs">
+      <DependentUpon>FrmBuscarAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAltaAlumno.resx">
       <DependentUpon>FrmAltaAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarAlumno.resx">
+      <DependentUpon>FrmBuscarAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportes.resx">
       <DependentUpon>FrmReportes.cs</DependentUpon>

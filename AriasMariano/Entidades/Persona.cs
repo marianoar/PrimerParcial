@@ -57,9 +57,9 @@ namespace Entidades
             sb.AppendLine("DNI N°"+Dni.ToString());
             if (femenino)
             {
-                sb.AppendLine(" - Femenino");
+                sb.AppendLine("Sexo: Femenino");
             }
-            else { sb.AppendLine(" - Masculino");
+            else { sb.AppendLine("Sexo: Masculino");
             }
             return sb.ToString();
         }

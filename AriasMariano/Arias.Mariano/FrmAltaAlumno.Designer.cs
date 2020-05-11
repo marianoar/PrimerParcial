@@ -63,7 +63,7 @@
             this.btnResponsable.Location = new System.Drawing.Point(179, 185);
             this.btnResponsable.Name = "btnResponsable";
             this.btnResponsable.Size = new System.Drawing.Size(132, 23);
-            this.btnResponsable.TabIndex = 30;
+            this.btnResponsable.TabIndex = 6;
             this.btnResponsable.Text = "Cargar Responsable";
             this.btnResponsable.UseVisualStyleBackColor = true;
             this.btnResponsable.Visible = false;
@@ -75,7 +75,7 @@
             this.txtApellidoResp.Location = new System.Drawing.Point(178, 219);
             this.txtApellidoResp.Name = "txtApellidoResp";
             this.txtApellidoResp.Size = new System.Drawing.Size(132, 20);
-            this.txtApellidoResp.TabIndex = 27;
+            this.txtApellidoResp.TabIndex = 7;
             // 
             // labelVarios2
             // 
@@ -102,7 +102,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(75, 426);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 32;
+            this.btnAceptar.TabIndex = 13;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -116,7 +116,7 @@
             this.cmbGenero.Location = new System.Drawing.Point(179, 119);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(132, 21);
-            this.cmbGenero.TabIndex = 25;
+            this.cmbGenero.TabIndex = 4;
             // 
             // txtDniResp
             // 
@@ -124,7 +124,7 @@
             this.txtDniResp.Location = new System.Drawing.Point(178, 287);
             this.txtDniResp.Name = "txtDniResp";
             this.txtDniResp.Size = new System.Drawing.Size(131, 20);
-            this.txtDniResp.TabIndex = 28;
+            this.txtDniResp.TabIndex = 9;
             // 
             // labelGenero
             // 
@@ -141,21 +141,21 @@
             this.txtDni.Location = new System.Drawing.Point(179, 88);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(132, 20);
-            this.txtDni.TabIndex = 24;
+            this.txtDni.TabIndex = 3;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(179, 57);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(132, 20);
-            this.txtNombre.TabIndex = 21;
+            this.txtNombre.TabIndex = 2;
             // 
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(179, 26);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(132, 20);
-            this.txtApellido.TabIndex = 20;
+            this.txtApellido.TabIndex = 1;
             // 
             // labelDNI
             // 
@@ -193,7 +193,7 @@
             this.txtNombreResp.Location = new System.Drawing.Point(178, 253);
             this.txtNombreResp.Name = "txtNombreResp";
             this.txtNombreResp.Size = new System.Drawing.Size(132, 20);
-            this.txtNombreResp.TabIndex = 37;
+            this.txtNombreResp.TabIndex = 8;
             // 
             // cmbBoxGeneroResp
             // 
@@ -205,7 +205,7 @@
             this.cmbBoxGeneroResp.Location = new System.Drawing.Point(178, 321);
             this.cmbBoxGeneroResp.Name = "cmbBoxGeneroResp";
             this.cmbBoxGeneroResp.Size = new System.Drawing.Size(131, 21);
-            this.cmbBoxGeneroResp.TabIndex = 38;
+            this.cmbBoxGeneroResp.TabIndex = 10;
             // 
             // cmbBoxRelacion
             // 
@@ -214,7 +214,7 @@
             this.cmbBoxRelacion.Location = new System.Drawing.Point(178, 356);
             this.cmbBoxRelacion.Name = "cmbBoxRelacion";
             this.cmbBoxRelacion.Size = new System.Drawing.Size(132, 21);
-            this.cmbBoxRelacion.TabIndex = 39;
+            this.cmbBoxRelacion.TabIndex = 11;
             // 
             // txtTelefono
             // 
@@ -222,7 +222,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(178, 391);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(131, 20);
-            this.txtTelefono.TabIndex = 40;
+            this.txtTelefono.TabIndex = 12;
             // 
             // labelApellidoResp
             // 
@@ -299,14 +299,14 @@
             this.txtCuota.Location = new System.Drawing.Point(180, 151);
             this.txtCuota.Name = "txtCuota";
             this.txtCuota.Size = new System.Drawing.Size(131, 20);
-            this.txtCuota.TabIndex = 48;
+            this.txtCuota.TabIndex = 5;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(234, 426);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 49;
+            this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);

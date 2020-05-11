@@ -18,7 +18,7 @@ namespace Arias.Mariano
         List<Docente> docentesLista;
         List<Alumno> alumnosSinAula;
         bool esModificar = false;
-        int i;
+        
         /*
         public FrmAdministrarAula(Aula aula, int indice, List<Docente> docentes, List<Alumno> alumnosLista;):this(docentesLista:docentes, alumnosLista:alumnos)
         {
@@ -67,7 +67,8 @@ namespace Arias.Mariano
             get { return aula; }
             set { aula = value; }
         }
-        private void Aula_Load(object sender, EventArgs e)
+
+            private void Aula_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < docentesLista.Count; i++) // uso for porque queda mas prolijo para mostrar en el cmbbox
             {

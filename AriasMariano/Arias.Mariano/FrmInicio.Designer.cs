@@ -52,6 +52,7 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelTituloPpal = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
@@ -226,11 +227,10 @@
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar Aula";
             this.btnModificar.UseVisualStyleBackColor = true;
-          //  this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(368, 497);
+            this.btnCerrar.Location = new System.Drawing.Point(368, 496);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(160, 23);
             this.btnCerrar.TabIndex = 6;
@@ -261,12 +261,23 @@
             this.labelTituloPpal.TabIndex = 9;
             this.labelTituloPpal.Text = "Jardin de Infantes Los Pichoncitos";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(368, 461);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(160, 23);
+            this.btnBuscar.TabIndex = 10;
+            this.btnBuscar.Text = "Buscar Alumno";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.labelTituloPpal);
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.btnCerrar);
@@ -318,6 +329,7 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Label labelTituloPpal;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
 

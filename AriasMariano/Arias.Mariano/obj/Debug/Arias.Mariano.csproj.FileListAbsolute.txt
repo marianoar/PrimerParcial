@@ -15,3 +15,4 @@ C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\De
 C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.FrmAdministrarAula.resources
 C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.FrmReportes.resources
 C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.FrmAltaAlumno.resources
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.FrmBuscarAlumno.resources

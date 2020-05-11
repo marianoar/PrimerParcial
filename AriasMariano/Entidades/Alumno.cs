@@ -66,9 +66,16 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
             
             sb.AppendLine(base.ToString());
-            sb.AppendLine(colorSala.ToString());
+            if (colorSala == 0)
+            {
+                sb.AppendLine("Sala: sin asignar");
+            }
+            else
+            {
+                sb.AppendLine("Sala:" + colorSala.ToString());
+            }
             sb.AppendLine("Legajo Nº " + legajo.ToString());
-            sb.AppendLine(precioCuota.ToString());
+            sb.AppendLine("Valor cuota: $ "+precioCuota.ToString());
           //  sb.AppendLine(Responsable.ToString());
             return sb.ToString();
         }

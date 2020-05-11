@@ -160,7 +160,7 @@ namespace Arias.Mariano
         {
             if (auxiliar == "reporteResp")
             {
-               // richTextBoxPadres.
+               
                 listBoxCentral.Items.Clear();
                 for (int i = 0; i < aulas[cmbAulas.SelectedIndex].Alumnos.Count; i++)
                 {
@@ -192,9 +192,22 @@ namespace Arias.Mariano
             }
             
         }
+        public void SetFormBuscar()
+        {
+            cmbAulas.Visible = false;
+            listBoxCentral.Visible = false;
+            labelTituloAula.Visible = false;
+            labelLista.Visible = false;
+            labelTituloPpal.Visible = false;
+            lblTitulo.Location = new System.Drawing.Point(250,25);
+            lblTitulo.BackColor = Color.CadetBlue;
+            lblTitulo.Text = "Busqueda de Alumnos por Apellido";
+            btnCerrar.Location = new System.Drawing.Point(300, 250);
+
+        }
       
         /// <summary>
-        /// Cierro el formulario
+        /// Cierro el form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

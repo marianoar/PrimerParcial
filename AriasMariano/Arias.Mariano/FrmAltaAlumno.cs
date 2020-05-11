@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,8 +89,9 @@ namespace Arias.Mariano
                     MessageBox.Show("Debe seleccionar genero.");
                     return;
                 }
-             
-                nuevoAlumno = new Alumno(txtApellido.Text, txtNombre.Text, dni, femeninoAux, cuota);
+
+
+            nuevoAlumno = new Alumno(txtApellido.Text, txtNombre.Text, dni, femeninoAux, cuota);
             if (!flagResponsable)
             {
                 MessageBox.Show("Recuerde cargar datos del adulto responsable del Alumno");
@@ -128,6 +130,7 @@ namespace Arias.Mariano
                     MessageBox.Show("El campo telefono requiere al menos 6 numeros");
                     return;
                 }
+            
                 nuevoResponsable = new Responsable(txtApellidoResp.Text, txtNombreResp.Text, dniR, femeninoAux, (EParentesco)cmbBoxRelacion.SelectedItem, txtTelefono.Text);
                 nuevoAlumno.Responsable = nuevoResponsable;
 

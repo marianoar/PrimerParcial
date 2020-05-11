@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,11 +20,11 @@ namespace Arias.Mariano
         private static List<Alumno> alumnosLista;
         private static List<Alumno> alumnosSinSala;
         private static List<Responsable> responsablesLista;
-        private static List<Aula> aulasLista;      
-       
+        private static List<Aula> aulasLista;
+
+        
         private int numeroLegajo;
 
-        //string.IsNullOrEmpty(this.textBox1.Text) 
         bool flagSetPrueba = false;
         public FrmInicio()
         {
@@ -32,6 +33,8 @@ namespace Arias.Mariano
             ForeColor = Color.DarkBlue;
             numeroLegajo = 1001;
             btnModificar.Enabled = false;
+            btnBuscar.BackColor = Color.Lavender;
+            
         }
         /// <summary>
         /// inicializo todas las listas
@@ -299,6 +302,13 @@ namespace Arias.Mariano
             FrmReportes frmReportes = new FrmReportes(reporte, aulasLista);
             frmReportes.ShowDialog();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FrmBuscarAlumno frmBuscar = new FrmBuscarAlumno(alumnosLista);
+           
+            frmBuscar.ShowDialog();
+        }
         /// <summary>
         /// Carga datos en alumnos, docentes y padres para realizar pruebas
         /// </summary>
@@ -435,6 +445,9 @@ namespace Arias.Mariano
         {
             this.Close();
         }
+
         #endregion
+
+      
     }
 }
