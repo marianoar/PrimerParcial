@@ -17,7 +17,7 @@ namespace Arias.Mariano
         List<Docente> docentes;
         List<Administrativo> administrativos;
         string auxiliar;
-
+        #region Constructores, cada cosntructor recibe un tipo de lista y un string auxiliar, en funcion del contenido del string se ejecutan partes del Load
         public FrmReportes(string aux, List<Administrativo> administrativos) : this()
         {
             auxiliar = aux;
@@ -50,7 +50,6 @@ namespace Arias.Mariano
             {
                 cmbAulas.Items.Add(aulas[i].ToString());
             }
-
         }
         
         public FrmReportes(string aux, Aula aula) :this()
@@ -73,11 +72,12 @@ namespace Arias.Mariano
             InitializeComponent();
             btnCalcular.Visible = false;
             btnCalcular.Enabled = false;
+            labelTituloJardin.Visible = true;
         }
+        #endregion
 
         private void FrmAula_Load(object sender, EventArgs e)
         {
-
             if (auxiliar == "verAula")
             {
                 if (lblSala.Text == "Naranja")
@@ -99,12 +99,13 @@ namespace Arias.Mariano
             }
             else if (auxiliar == "reporteResp")
             {
+                labelLista.Location = new System.Drawing.Point(165, 175);
                 labelLista.Text = "Datos de Contacto de Responsables";
 
             }
             else if (auxiliar == "sueldoDocente")
             {
-
+                labelLista.Location = new System.Drawing.Point(200, 175);
                 labelLista.Text = "Lista de Salarios docentes";
                 for (int i = 0; i < docentes.Count; i++)
                 {
@@ -113,6 +114,7 @@ namespace Arias.Mariano
             }
             else if (auxiliar == "sueldoAdmin")
             {
+                labelLista.Location = new System.Drawing.Point(165, 175);
                 labelLista.Text = "Lista de Salarios Personal Administrativo";
                 for (int i = 0; i < administrativos.Count; i++)
                 {
@@ -121,6 +123,7 @@ namespace Arias.Mariano
             }
             else if (auxiliar == "recaudacionAula")
             {
+                labelLista.Location = new System.Drawing.Point(175, 175);
                 labelLista.Text = "Datos de Recaudacion por Aula";
             }
             else if (auxiliar == "recaudacionTotal")
@@ -128,17 +131,22 @@ namespace Arias.Mariano
                 labelTituloAula.Visible = false;
                 lblTitulo.Visible = false;
                 labelLista.Visible = true;
+                labelLista.Location = new System.Drawing.Point(165, 175);
                 labelLista.Text = "Recaudacion total del Jardin";
+               // this.labelLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 listBoxCentral.Visible = false;
                 cmbAulas.Visible = false;
                 btnCalcular.Visible = true;
                 btnCalcular.Enabled = true;
-                labelTituloPpal.Visible = true;
-                iconLogo.Visible = true;
+                labelTituloJardin.Visible = true;
             }
         }
 
-
+        /// <summary>
+        /// Recorro la lista de alumnos del aula  y acumulo el valor de las cuotas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCalcular_Click(object sender, EventArgs e)
         {
                 int acumulador = 0;
@@ -192,18 +200,21 @@ namespace Arias.Mariano
             }
             
         }
+        /// <summary>
+        /// Este metodo se llama desde el load del FormBuscarAlumnos y setea los controles en el form derivado
+        /// </summary>
         public void SetFormBuscar()
         {
             cmbAulas.Visible = false;
             listBoxCentral.Visible = false;
             labelTituloAula.Visible = false;
             labelLista.Visible = false;
-            labelTituloPpal.Visible = false;
+            labelTituloJardin.Visible = false;
             lblTitulo.Location = new System.Drawing.Point(250,25);
             lblTitulo.BackColor = Color.CadetBlue;
             lblTitulo.Text = "Busqueda de Alumnos por Apellido";
             btnCerrar.Location = new System.Drawing.Point(300, 250);
-
+            pictureBoxImg.Visible = false;
         }
       
         /// <summary>

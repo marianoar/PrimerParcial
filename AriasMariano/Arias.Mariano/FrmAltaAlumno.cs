@@ -46,7 +46,6 @@ namespace Arias.Mariano
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-          
                 if((string.IsNullOrWhiteSpace(txtApellido.Text)) || (string.IsNullOrWhiteSpace(txtNombre.Text))
                     ||(string.IsNullOrWhiteSpace(txtDni.Text)) || (string.IsNullOrWhiteSpace(txtCuota.Text)))  
                 {

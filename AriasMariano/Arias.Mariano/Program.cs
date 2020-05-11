@@ -16,7 +16,7 @@ namespace Arias.Mariano
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmInicio());
+            Application.Run(new FrmLogin());
         }
     }
 }

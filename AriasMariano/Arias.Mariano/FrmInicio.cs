@@ -16,13 +16,14 @@ namespace Arias.Mariano
     {
         private static List<Docente> docentesLista;
         private static List<Docente> docentesSinSala;
-        private static List<Administrativo> adminLista;
+        
         private static List<Alumno> alumnosLista;
         private static List<Alumno> alumnosSinSala;
+
+        private static List<Administrativo> adminLista;
         private static List<Responsable> responsablesLista;
         private static List<Aula> aulasLista;
 
-        
         private int numeroLegajo;
 
         bool flagSetPrueba = false;
@@ -31,6 +32,7 @@ namespace Arias.Mariano
             InitializeComponent();
             BackColor = Color.Lavender;
             ForeColor = Color.DarkBlue;
+            labelTituloPpal.ForeColor = Color.BlueViolet;
             numeroLegajo = 1001;
             btnModificar.Enabled = false;
             btnBuscar.BackColor = Color.Lavender;
@@ -71,7 +73,7 @@ namespace Arias.Mariano
         #endregion
 
         /// <summary>
-        /// Creo un nuevo Docente
+        /// Creo un nuevo Docente y lo sumo a la listas correspondientes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -156,7 +158,6 @@ namespace Arias.Mariano
         /// <param name="e"></param>
         private void cargarPruebaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             if (!flagSetPrueba)
             {
                 flagSetPrueba = CargarPrueba();
@@ -205,7 +206,7 @@ namespace Arias.Mariano
                 MessageBox.Show("Debe seleccionar un aula");
             }
         }
-        ///Sin Terminar
+        /// Sin Terminar  - Boton Enabled off
         /* 
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -302,7 +303,11 @@ namespace Arias.Mariano
             FrmReportes frmReportes = new FrmReportes(reporte, aulasLista);
             frmReportes.ShowDialog();
         }
-
+        /// <summary>
+        /// Busqueda de Alumno por apellido, en un form derivado de FrmReportes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             FrmBuscarAlumno frmBuscar = new FrmBuscarAlumno(alumnosLista);
@@ -373,7 +378,7 @@ namespace Arias.Mariano
             Responsable responsableGenerico = new Responsable("White", "Walter", 10755999, false, EParentesco.Otro, "1155886699");
             responsablesLista.Add(responsableGenerico);
             #endregion
-
+            #region Creo 50 alumnos en formato ApellidoNumero, NombreNumero, dni random ...
             for (int i = 1; i < 51; i++)
              {
                Alumno alumno = new Alumno("Apellido"+i.ToString(), "Nombre"+i.ToString(), dni.Next(45000000,52000000), true, 1250);
@@ -383,7 +388,8 @@ namespace Arias.Mariano
                alumnosLista.Add(alumno);
                alumnosSinSala.Add(alumno);
             }
-
+            #endregion
+            #region Creo tres aulas nuevas con todos su contenido y modifico las listas en funcion.
             Aula aula1 = new Aula(EColores.Amarilla, Eturno.Tarde, docentesLista[4]);
             docentesSinSala.Remove(docentesLista[4]);
 
@@ -422,8 +428,8 @@ namespace Arias.Mariano
             }
             aula3.Alumnos = listaAuxiliar;
             aulasLista.Add(aula3);
+            #endregion
             return true;
-
         }
 
         #region metodos Cerrar programa
@@ -448,6 +454,5 @@ namespace Arias.Mariano
 
         #endregion
 
-      
     }
 }

@@ -14,6 +14,7 @@ namespace Arias.Mariano
     public partial class FrmBuscarAlumno : FrmReportes
     {
         List<Alumno> alumnos;
+
         public FrmBuscarAlumno(List<Alumno> alumnos) :this()
         {
             this.alumnos = alumnos;
@@ -21,18 +22,18 @@ namespace Arias.Mariano
         public FrmBuscarAlumno()
         {
             InitializeComponent();
-            
-          
         }
 
         private void FrmBuscarAlumno_Load(object sender, EventArgs e)
         {
-            SetFormBuscar();
+            SetFormBuscar(); /// setea los controles de este form desde su padre
             labelBuscar.Text = "Ingrese Apellido :";
-          
-
         }
-
+        /// <summary>
+        /// Comparo el string ingresado con apellido de la lista general de alumnos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if ((string.IsNullOrWhiteSpace(textBuscar.Text)) || (textBuscar.Text.Length < 3))
