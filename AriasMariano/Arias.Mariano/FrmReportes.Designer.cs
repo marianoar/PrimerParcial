@@ -39,6 +39,7 @@
             this.btnCalcular = new System.Windows.Forms.Button();
             this.labelTituloPpal = new System.Windows.Forms.Label();
             this.iconLogo = new System.Windows.Forms.PictureBox();
+            this.richTextBoxPadres = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,11 +144,22 @@
             this.iconLogo.TabStop = false;
             this.iconLogo.Visible = false;
             // 
+            // richTextBoxPadres
+            // 
+            this.richTextBoxPadres.Enabled = false;
+            this.richTextBoxPadres.Location = new System.Drawing.Point(184, 92);
+            this.richTextBoxPadres.Name = "richTextBoxPadres";
+            this.richTextBoxPadres.Size = new System.Drawing.Size(400, 316);
+            this.richTextBoxPadres.TabIndex = 13;
+            this.richTextBoxPadres.Text = "";
+            this.richTextBoxPadres.Visible = false;
+            // 
             // FrmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.richTextBoxPadres);
             this.Controls.Add(this.labelTituloPpal);
             this.Controls.Add(this.iconLogo);
             this.Controls.Add(this.btnCalcular);
@@ -183,5 +195,6 @@
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label labelTituloPpal;
         private System.Windows.Forms.PictureBox iconLogo;
+        private System.Windows.Forms.RichTextBox richTextBoxPadres;
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Arias.Mariano
-{//Crear en algun lado una lista de alumnos sin aula
+{
     public partial class FrmAdministrarAula : Form
     {
         Aula aula;
@@ -44,24 +44,22 @@ namespace Arias.Mariano
            
 
         }*/
+        #region Constructores
         public FrmAdministrarAula(List<Docente> docentesLista, List<Alumno> alumnos) :this()
-        {
-            
+        {     
             alumnosEnAulaLista =  new List<Alumno>();
             this.docentesLista = new List<Docente>(docentesLista); // innecesario?
             this.alumnosSinAula = new List<Alumno>(alumnos);
-            
         }
-
+        public FrmAdministrarAula()
+        {
+            InitializeComponent();
+        }
+        #endregion
         public List<Alumno> AlumnoSinAula
         {
             get { return alumnosSinAula; }
             set { alumnosSinAula = value; }
-        }
-
-        public FrmAdministrarAula()
-        {
-            InitializeComponent();
         }
 
         public Aula NuevaAula
@@ -105,7 +103,7 @@ namespace Arias.Mariano
                 if (alumnosEnAulaLista.Count < 31)
                 {
                     MessageBox.Show("Estas agregando al alumno/a: \n" + alumnosSinAula[listBoxAlumnos.SelectedIndex].ToString());
-                                            
+                      
                     alumnosEnAulaLista.Add(alumnosSinAula[listBoxAlumnos.SelectedIndex]);
                     alumnosSinAula.Remove(alumnosSinAula[listBoxAlumnos.SelectedIndex]);
                     RecargarListas();
@@ -133,26 +131,15 @@ namespace Arias.Mariano
             {
                 alumnosSinAula.Add(alumnosEnAulaLista[listBoxAlumnosEnAula.SelectedIndex]);
                 alumnosEnAulaLista.Remove(alumnosEnAulaLista[listBoxAlumnosEnAula.SelectedIndex]);
-               // MessageBox.Show("Estas quitando al alumno/a: \n" + alumnosEnAulaLista[listBoxAlumnosEnAula.SelectedItem].ToString());        
+                // MessageBox.Show("Estas quitando al alumno/a: \n" + alumnosEnAulaLista[listBoxAlumnosEnAula.SelectedItem].ToString());        
                 RecargarListas();
-            }
-            
+            }    
         }
-
-        private void RecargarListas()
-        {
-            listBoxAlumnosEnAula.Items.Clear();
-            for (int i = 0; i < alumnosEnAulaLista.Count; i++)
-            {
-                listBoxAlumnosEnAula.Items.Add(alumnosEnAulaLista[i].Listar());
-            }
-            listBoxAlumnos.Items.Clear();
-            for (int i = 0; i < alumnosSinAula.Count; i++)
-            {
-                listBoxAlumnos.Items.Add(alumnosSinAula[i].Listar());
-            }
-        }
-
+        /// <summary>
+        /// Cambia el color de fondo en funcion de item seleccionado en el combo box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbSalita_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -171,7 +158,12 @@ namespace Arias.Mariano
                 BackColor = Color.Green;
             }
         }
-
+        /// <summary>
+        /// Creo nueva Aula previa validaciones
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (!esModificar)
@@ -181,43 +173,52 @@ namespace Arias.Mariano
                 {
                     MessageBox.Show("Debe seleccionar sala");
                     return;
-            }
-            else if (cmbTurno.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe seleccionar turno");
-                return;
-            }else if (cmbDocentes.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe elegir un Docente");
-                return;
-            }
-                for (int i = 0; i < alumnosEnAulaLista.Count; i++)
+                }else if (cmbTurno.SelectedIndex == -1)
+                {
+                     MessageBox.Show("Debe seleccionar turno");
+                    return;
+                }else if (cmbDocentes.SelectedIndex == -1)
+                {
+                     MessageBox.Show("Debe elegir un Docente");
+                     return;
+                }
+            for (int i = 0; i < alumnosEnAulaLista.Count; i++)
                 {
                     alumnosEnAulaLista[i].ColorSala =(EColores)cmbSalita.SelectedItem;
                 }
 
             aula = new Aula((EColores)cmbSalita.SelectedItem, (Eturno)cmbTurno.SelectedItem, docentesLista[cmbDocentes.SelectedIndex]);
-            aula.Alumnos = alumnosEnAulaLista;
-            
+            aula.Alumnos = new List<Alumno>();    
+            for (int i = 0; i < alumnosEnAulaLista.Count; i++)
+            {
+            // Utiliza la sobrecarga del operador +, verifica la cantidad < 30 y que no se repita
+                    if(aula + alumnosEnAulaLista[i]) 
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error, el alumno ya se encuentra en el aula o el Aula ha llegado al limite de alumno.");
+                    }
+                }
             MessageBox.Show("Se ha creado una nueva aula.\nRecuerde Actualizar el listado de aulas.");
             this.DialogResult = DialogResult.OK;
-        
             }
-            else
+        }
+        /// <summary>
+        /// Muestra las listas de alumnos en los dos ListBox
+        /// </summary>
+        private void RecargarListas()
+        {
+            listBoxAlumnosEnAula.Items.Clear();
+            for (int i = 0; i < alumnosEnAulaLista.Count; i++)
             {
-                bool flag = false;
-                if (!flag)
-                {
-                    MessageBox.Show("Confirme los datos de Sala, Turno y Docente");
-                }
-
-                // FrmInicio.aulasLista[i].ColorSala = (EColores)cmbSalita.SelectedItem;
-                // FrmInicio.aulasLista[i].Turno = (Eturno)cmbTurno.SelectedItem;
-                // FrmInicio.aulasLista[i].Docente = docentesLista[cmbDocentes.SelectedIndex];
-                   
-                 MessageBox.Show("El aula ha sido modificada");
-                 Close();
-                
+                listBoxAlumnosEnAula.Items.Add(alumnosEnAulaLista[i].Listar());
+            }
+            listBoxAlumnos.Items.Clear();
+            for (int i = 0; i < alumnosSinAula.Count; i++)
+            {
+                listBoxAlumnos.Items.Add(alumnosSinAula[i].Listar());
             }
         }
         /// <summary>

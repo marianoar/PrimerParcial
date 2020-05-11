@@ -57,14 +57,17 @@ namespace Entidades
                     return false;
                 }
             }
-            if(aula.alumnos.Count < 30)
+            if(aula.alumnos.Count <= 30)
             { 
                 aula.alumnos.Add(alumno);
                 return true;   
             }
             return false;          
         }
-
+        /// <summary>
+        /// Sobrecarga del metodo toString 
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

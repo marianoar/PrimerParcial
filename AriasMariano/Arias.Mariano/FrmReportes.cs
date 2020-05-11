@@ -160,6 +160,7 @@ namespace Arias.Mariano
         {
             if (auxiliar == "reporteResp")
             {
+               // richTextBoxPadres.
                 listBoxCentral.Items.Clear();
                 for (int i = 0; i < aulas[cmbAulas.SelectedIndex].Alumnos.Count; i++)
                 {

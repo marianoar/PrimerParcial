@@ -31,10 +31,11 @@ namespace Arias.Mariano
             BackColor = Color.Lavender;
             ForeColor = Color.DarkBlue;
             numeroLegajo = 1001;
-            
             btnModificar.Enabled = false;
         }
-
+        /// <summary>
+        /// inicializo todas las listas
+        /// </summary>
         static FrmInicio()
         {
             docentesLista = new List<Docente>();
@@ -51,18 +52,26 @@ namespace Arias.Mariano
 
             responsablesLista = new List<Responsable>();
         }
+
+        #region Propiedades
         public List<Docente> DocenteLista
         {
             get { return docentesLista; }
             set { docentesLista = value; }
         }
 
-       // public List<Responsable> ResponsablesLista
         public int Legajo
         {
             get { return numeroLegajo; }
             set { numeroLegajo = value; }
         }
+        #endregion
+
+        /// <summary>
+        /// Creo un nuevo Docente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void altaDocenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string alta = "Docente";
@@ -75,8 +84,12 @@ namespace Arias.Mariano
                 docentesSinSala.Add(frmAltaDocente.NuevoDocente);
                 MessageBox.Show("Se ha ingresado a la siguiente persona como Docente: \n" + frmAltaDocente.NuevoDocente.ToString());
             }
-           
         }
+        /// <summary>
+        /// Creo un nuevo Administrativo y lo sumo a su lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void altaNoDocenteToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             string alta = "No Docente";
@@ -89,10 +102,13 @@ namespace Arias.Mariano
                 MessageBox.Show("Se ha ingresado a la siguiente persona como Personal No Docente: \n\n"+frmAltaNoDocente.NuevoNoDocente.ToString());
             }
         }
-
+        /// <summary>
+        /// Creo un nuevo Alumno con su correspondiente responsable, lo sumo a las listas correspondietnes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void altaAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
+        { 
             DialogResult resultado;
             FrmAltaAlumno frmAltaAlumno = new FrmAltaAlumno();
             resultado=frmAltaAlumno.ShowDialog();
@@ -108,7 +124,11 @@ namespace Arias.Mariano
                 MessageBox.Show("Alta de alumno exitosa. ");
             }
         }
-    
+    /// <summary>
+    /// Crea un objeto de la clase FrmAdministrarAula, luego lo suma a la lista de Aulas, devolviendo docentes y alumnos sin aula signada
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
         private void altaAulaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
@@ -124,16 +144,13 @@ namespace Arias.Mariano
                 aulasLista.Add(frmAula.NuevaAula);
                 docentesSinSala.Remove(frmAula.NuevaAula.Docente);
                 alumnosSinSala = frmAula.AlumnoSinAula;
-                /*
-                listBoxNominaAulas.Items.Clear();
-
-                for (int i = 0; i < aulasLista.Count; i++)
-                {
-                    listBoxNominaAulas.Items.Add(aulasLista[i].ToString());
-                }*/
             }
         }
-
+        /// <summary>
+        /// Llama al metodo CargarPrueba , creando alumnos, docentes, aulas, etc.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cargarPruebaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -151,9 +168,12 @@ namespace Arias.Mariano
             {
                 listBoxNominaAulas.Items.Add(aulasLista[i].ToString());
             }
-
         }
-       
+       /// <summary>
+       /// Actualiza el listBox central con las aulas existentes
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             listBoxNominaAulas.Items.Clear();
@@ -164,7 +184,7 @@ namespace Arias.Mariano
             }
         }
         /// <summary>
-        /// Abre un nueva ventana para ver contenido del aula seleccionada
+        /// Creo un FrmReportes para ver contenido del aula seleccionada
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -175,16 +195,15 @@ namespace Arias.Mariano
             if (indice != -1)
             {
                 FrmReportes frmAula = new FrmReportes(aux, aulasLista[indice]);
-                
                 frmAula.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Debe seleccionar un aula");
             }
-
         }
-        /*
+        ///Sin Terminar
+        /* 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             int indice = listBoxNominaAulas.SelectedIndex;
@@ -200,7 +219,11 @@ namespace Arias.Mariano
                 MessageBox.Show("Debe seleccionar un aula");
             }
             */
-        
+        /// <summary>
+        /// Elimina el aula seleccionada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int indice = listBoxNominaAulas.SelectedIndex;
@@ -220,38 +243,56 @@ namespace Arias.Mariano
             {
                 MessageBox.Show("Debe seleccionar un aula");
             }
-
         }
-
+        /// <summary>
+        /// Creo un objeto de la clase FrmReportes que mostrara un listbox con los responsables por cada aula 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void informacionPadresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string reporte="reporteResp";
             FrmReportes frmReportes = new FrmReportes(reporte, aulasLista);
             frmReportes.ShowDialog();
-
         }
+        /// <summary>
+        /// vCreo un objeto de la clase FrmReportes que mostrara un listbox con los docentes y calculo de cada salario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sueldoDocenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string reporte = "sueldoDocente";
             FrmReportes frmReportes = new FrmReportes( reporte, docentesLista);
             frmReportes.ShowDialog();
         }
-
+        /// <summary>
+        /// Creo un objeto de la clase FrmReportes que mostrara los salarios del personal no docente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sueldoNoDocenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string reporte = "sueldoAdmin";
             FrmReportes frmReportes = new FrmReportes(reporte, adminLista);
             frmReportes.ShowDialog();
-
         }
-
+        /// <summary>
+        /// Instancio un objeto de la clase FrmReportes que mostrara la recaudacion por cada aula
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void recaudacionPorAulaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string reporte = "recaudacionAula";
             FrmReportes frmReportes = new FrmReportes(reporte, aulasLista);
             frmReportes.ShowDialog();
         }
-
+        /// <summary>
+        /// Instancio un objeto de la clase FrmReportes que mostrara la recaudacion total
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void recaudacionTotalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string reporte = "recaudacionTotal";
