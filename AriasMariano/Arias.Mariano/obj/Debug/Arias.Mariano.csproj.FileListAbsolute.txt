@@ -1,0 +1,17 @@
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\bin\Debug\Arias.Mariano.exe.config
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\bin\Debug\Arias.Mariano.exe
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\bin\Debug\Arias.Mariano.pdb
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\bin\Debug\Entidades.dll
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\bin\Debug\Entidades.pdb
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.csprojAssemblyReference.cache
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.Properties.Resources.resources
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.csproj.GenerateResource.cache
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.csproj.CoreCompileInputs.cache
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.csproj.CopyComplete
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.exe
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.pdb
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.FrmInicio.resources
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.FrmAltaPersona.resources
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.FrmAdministrarAula.resources
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.FrmReportes.resources
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.FrmAltaAlumno.resources
