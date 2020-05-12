@@ -73,8 +73,9 @@
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.btnBuscar);
             this.Name = "FrmBuscarAlumno";
-            this.Text = "FrmBuscarAlumno";
+            this.Text = "Busqueda de Alumno";
             this.Load += new System.EventHandler(this.FrmBuscarAlumno_Load);
+            this.Controls.SetChildIndex(this.cmbAulas, 0);
             this.Controls.SetChildIndex(this.btnBuscar, 0);
             this.Controls.SetChildIndex(this.textBuscar, 0);
             this.Controls.SetChildIndex(this.labelBuscar, 0);

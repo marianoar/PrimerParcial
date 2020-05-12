@@ -53,6 +53,7 @@
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelTituloPpal = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.verVideosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +63,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.reporteToolStripMenuItem,
-            this.cargarPruebaToolStripMenuItem});
+            this.cargarPruebaToolStripMenuItem,
+            this.verVideosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(884, 24);
@@ -271,6 +273,13 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // verVideosToolStripMenuItem
+            // 
+            this.verVideosToolStripMenuItem.Name = "verVideosToolStripMenuItem";
+            this.verVideosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.verVideosToolStripMenuItem.Text = "Ver Videos";
+            this.verVideosToolStripMenuItem.Click += new System.EventHandler(this.verVideosToolStripMenuItem_Click);
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,6 +339,7 @@
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Label labelTituloPpal;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ToolStripMenuItem verVideosToolStripMenuItem;
     }
 }
 

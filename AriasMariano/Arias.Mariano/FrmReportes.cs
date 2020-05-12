@@ -164,7 +164,7 @@ namespace Arias.Mariano
                 MessageBox.Show("La recaudacion total fue de $" + acumulador.ToString());
         }
 
-        private void cmbAulas_SelectedIndexChanged(object sender, EventArgs e)
+        protected virtual void cmbAulas_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (auxiliar == "reporteResp")
             {
@@ -203,7 +203,7 @@ namespace Arias.Mariano
         /// <summary>
         /// Este metodo se llama desde el load del FormBuscarAlumnos y setea los controles en el form derivado
         /// </summary>
-        public void SetFormBuscar()
+        protected void SetFormBuscar()
         {
             cmbAulas.Visible = false;
             listBoxCentral.Visible = false;
@@ -216,13 +216,26 @@ namespace Arias.Mariano
             btnCerrar.Location = new System.Drawing.Point(300, 250);
             pictureBoxImg.Visible = false;
         }
-      
+
+        protected void SetFormVideos()
+        {
+            cmbAulas.Visible = true;
+            listBoxCentral.Visible = false;
+            labelTituloAula.Visible = true;
+            labelLista.Visible = false;
+            labelTituloJardin.Visible = true;
+            lblSala.Visible = false;
+            lblTitulo.Text = "Seleccione un video para reproducir";
+            lblTitulo.Location = new System.Drawing.Point(175, 100);
+            pictureBoxImg.Visible = true; ;
+        }
+
         /// <summary>
         /// Cierro el form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnCerrar_Click(object sender, EventArgs e)
+        protected virtual void btnCerrar_Click(object sender, EventArgs e)
         {
             Close();
         }

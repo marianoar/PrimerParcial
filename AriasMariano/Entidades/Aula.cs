@@ -12,7 +12,6 @@ namespace Entidades
         private EColores colorSala;
         private Docente docente;
         private Eturno turno;
-
         public List<Alumno> Alumnos
         {
             get
@@ -71,7 +70,7 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("Sala Color :"+ColorSala);
+            sb.Append("Sala Color : "+ColorSala);
             sb.Append("  -  Turno : " + Turno);
             sb.Append("  -  Docente : " + Docente.Listar());
             return sb.ToString();

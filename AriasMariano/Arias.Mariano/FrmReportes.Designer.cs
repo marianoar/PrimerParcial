@@ -38,10 +38,10 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.labelTituloJardin = new System.Windows.Forms.Label();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.pictureBoxImg = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxCentral
@@ -66,7 +66,7 @@
             // 
             this.labelTituloAula.AutoSize = true;
             this.labelTituloAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTituloAula.Location = new System.Drawing.Point(19, 13);
+            this.labelTituloAula.Location = new System.Drawing.Point(12, 164);
             this.labelTituloAula.Name = "labelTituloAula";
             this.labelTituloAula.Size = new System.Drawing.Size(108, 20);
             this.labelTituloAula.TabIndex = 4;
@@ -132,18 +132,6 @@
             this.labelTituloJardin.Text = "Jardin de Infantes Los Pichoncitos";
             this.labelTituloJardin.Visible = false;
             // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxLogo.Image = global::Arias.Mariano.Properties.Resources._1492531735_icon_sets_school_outline_hand_drawn_iconfinder01_83191;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(271, 18);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(50, 0);
-            this.pictureBoxLogo.TabIndex = 16;
-            this.pictureBoxLogo.TabStop = false;
-            // 
             // pictureBoxImg
             // 
             this.pictureBoxImg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -155,6 +143,18 @@
             this.pictureBoxImg.Size = new System.Drawing.Size(50, 50);
             this.pictureBoxImg.TabIndex = 17;
             this.pictureBoxImg.TabStop = false;
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxLogo.Image = global::Arias.Mariano.Properties.Resources._1492531735_icon_sets_school_outline_hand_drawn_iconfinder01_83191;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(271, 18);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(50, 0);
+            this.pictureBoxLogo.TabIndex = 16;
+            this.pictureBoxLogo.TabStop = false;
             // 
             // FrmReportes
             // 
@@ -180,8 +180,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visualizacion de Reportes";
             this.Load += new System.EventHandler(this.FrmAula_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,11 +193,11 @@
         private System.Windows.Forms.Label labelTituloAula;
         private System.Windows.Forms.Label lblSala;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.ComboBox cmbAulas;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label labelTituloJardin;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.PictureBox pictureBoxImg;
+        protected System.Windows.Forms.ComboBox cmbAulas;
     }
 }

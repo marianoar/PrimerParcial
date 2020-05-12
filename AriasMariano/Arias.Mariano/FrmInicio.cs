@@ -14,7 +14,7 @@ namespace Arias.Mariano
 {
     public partial class FrmInicio : Form
     {
-        private static List<Docente> docentesLista;
+        private static List<Docente> docentesLista; // Podria haber usado una sola lista
         private static List<Docente> docentesSinSala;
         
         private static List<Alumno> alumnosLista;
@@ -27,17 +27,21 @@ namespace Arias.Mariano
         private int numeroLegajo;
 
         bool flagSetPrueba = false;
+
         public FrmInicio()
         {
             InitializeComponent();
+
             BackColor = Color.Lavender;
             ForeColor = Color.DarkBlue;
             labelTituloPpal.ForeColor = Color.BlueViolet;
             numeroLegajo = 1001;
             btnModificar.Enabled = false;
             btnBuscar.BackColor = Color.Lavender;
-            
+            btnActualizar.Visible = false;
+            btnActualizar.Enabled = false;
         }
+
         /// <summary>
         /// inicializo todas las listas
         /// </summary>
@@ -149,10 +153,11 @@ namespace Arias.Mariano
                 aulasLista.Add(frmAula.NuevaAula);
                 docentesSinSala.Remove(frmAula.NuevaAula.Docente);
                 alumnosSinSala = frmAula.AlumnoSinAula;
+                ActualizarListBoxAulas();
             }
         }
         /// <summary>
-        /// Llama al metodo CargarPrueba , creando alumnos, docentes, aulas, etc.
+        /// Llama al metodo CargarPrueba, creando alumnos, docentes, aulas, etc.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -180,6 +185,13 @@ namespace Arias.Mariano
        /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            ActualizarListBoxAulas();
+        }
+        /// <summary>
+        /// Muestra lista de aulas en el listbox central
+        /// </summary>
+        public void ActualizarListBoxAulas()
+        {
             listBoxNominaAulas.Items.Clear();
 
             for (int i = 0; i < aulasLista.Count; i++)
@@ -206,7 +218,7 @@ namespace Arias.Mariano
                 MessageBox.Show("Debe seleccionar un aula");
             }
         }
-        /// Sin Terminar  - Boton Enabled off
+        /// Modificar Aula - Sin Terminar  - Boton Enabled off
         /* 
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -223,6 +235,7 @@ namespace Arias.Mariano
                 MessageBox.Show("Debe seleccionar un aula");
             }
             */
+
         /// <summary>
         /// Elimina el aula seleccionada
         /// </summary>
@@ -248,6 +261,7 @@ namespace Arias.Mariano
                 MessageBox.Show("Debe seleccionar un aula");
             }
         }
+
         /// <summary>
         /// Creo un objeto de la clase FrmReportes que mostrara un listbox con los responsables por cada aula 
         /// </summary>
@@ -303,6 +317,12 @@ namespace Arias.Mariano
             FrmReportes frmReportes = new FrmReportes(reporte, aulasLista);
             frmReportes.ShowDialog();
         }
+
+        private void verVideosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVideos frmVideos = new FrmVideos();
+            frmVideos.ShowDialog();
+        }
         /// <summary>
         /// Busqueda de Alumno por apellido, en un form derivado de FrmReportes
         /// </summary>
@@ -317,7 +337,7 @@ namespace Arias.Mariano
         /// <summary>
         /// Carga datos en alumnos, docentes y padres para realizar pruebas
         /// </summary>
-        /// <returns></returns>
+        /// <returns>true</returns>
         public bool CargarPrueba()
         {
             #region Cargo datos de 6 docentes
@@ -417,7 +437,7 @@ namespace Arias.Mariano
             aula2.Alumnos = listaAuxiliar;
             aulasLista.Add(aula2);
 
-            Aula aula3 = new Aula(EColores.Verde, Eturno.Mañana, docentesLista[2]);
+            Aula aula3 = new Aula(EColores.Naranja, Eturno.Mañana, docentesLista[2]);
             docentesSinSala.Remove(docentesLista[2]);
             listaAuxiliar = new List<Alumno>();
             for (int i = alumnosSinSala.Count-6; i < alumnosSinSala.Count-3; i++)
@@ -431,7 +451,7 @@ namespace Arias.Mariano
             #endregion
             return true;
         }
-
+      
         #region metodos Cerrar programa
         /// <summary>
         /// Cierra el programa desde el boton Cerrar
@@ -454,5 +474,6 @@ namespace Arias.Mariano
 
         #endregion
 
+    
     }
 }

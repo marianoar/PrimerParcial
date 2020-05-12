@@ -56,21 +56,32 @@ namespace Arias.Mariano
             InitializeComponent();
         }
         #endregion
+        #region Propiedades
         public List<Alumno> AlumnoSinAula
         {
             get { return alumnosSinAula; }
             set { alumnosSinAula = value; }
         }
-
+        public List<Docente> DocentesLista
+        {
+            get { return docentesLista; }
+            set { docentesLista = value; }
+        }
+         public List<Alumno> AlumnosEnAulaLista
+        {
+            get { return alumnosEnAulaLista; }
+            set { alumnosEnAulaLista = value; }
+        }
         public Aula NuevaAula
         {
             get { return aula; }
             set { aula = value; }
         }
+        #endregion
 
-            private void Aula_Load(object sender, EventArgs e)
+        private void Aula_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < docentesLista.Count; i++) // uso for porque queda mas prolijo para mostrar en el cmbbox
+            for (int i = 0; i < docentesLista.Count; i++) // 
             {
                 cmbDocentes.Items.Add(this.docentesLista[i].Listar());
             }
@@ -83,16 +94,15 @@ namespace Arias.Mariano
             {
                 cmbTurno.Items.Add(item);
             }
-            /*
-            for (int i = 0; i < alumnoSinAula.Count; i++)
-            {
-                listBoxAlumnos.Items.Add(alumnoSinAula[i].Listar());
-            }
-            */
+           
             RecargarListas();
             BackColor = Color.Honeydew;          
         }
-
+        /// <summary>
+        /// Agrego un Alumno desde la lista de alumnos sin aula a la lista de alumnosesta aula.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (listBoxAlumnos.SelectedIndex == -1)
@@ -132,10 +142,10 @@ namespace Arias.Mariano
             {
                 alumnosSinAula.Add(alumnosEnAulaLista[listBoxAlumnosEnAula.SelectedIndex]);
                 alumnosEnAulaLista.Remove(alumnosEnAulaLista[listBoxAlumnosEnAula.SelectedIndex]);
-                // MessageBox.Show("Estas quitando al alumno/a: \n" + alumnosEnAulaLista[listBoxAlumnosEnAula.SelectedItem].ToString());        
                 RecargarListas();
             }    
         }
+
         /// <summary>
         /// Cambia el color de fondo en funcion de item seleccionado en el combo box
         /// </summary>
@@ -160,8 +170,7 @@ namespace Arias.Mariano
             }
         }
         /// <summary>
-        /// Creo nueva Aula previa validaciones
-        /// 
+        /// Creo nueva Aula previo validaciones
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -192,7 +201,7 @@ namespace Arias.Mariano
             aula.Alumnos = new List<Alumno>();    
             for (int i = 0; i < alumnosEnAulaLista.Count; i++)
             {
-            // Utiliza la sobrecarga del operador +, verifica la cantidad < 30 y que no se repita
+            // Utiliza la sobrecarga del operador +, verifica la cantidad < 30 y que no se repita 
                     if(aula + alumnosEnAulaLista[i]) 
                     {
                         continue;
@@ -202,7 +211,7 @@ namespace Arias.Mariano
                         MessageBox.Show("Error, el alumno ya se encuentra en el aula o el Aula ha llegado al limite de alumno.");
                     }
                 }
-            MessageBox.Show("Se ha creado una nueva aula.\nRecuerde Actualizar el listado de aulas.");
+            MessageBox.Show("Se ha creado una nueva aula.");
             this.DialogResult = DialogResult.OK;
             }
         }

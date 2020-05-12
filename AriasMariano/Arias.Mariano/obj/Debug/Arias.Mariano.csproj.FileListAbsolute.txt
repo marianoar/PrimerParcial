@@ -17,3 +17,9 @@ C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\De
 C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.FrmAltaAlumno.resources
 C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.FrmBuscarAlumno.resources
 C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.FrmLogin.resources
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\bin\Debug\Interop.WMPLib.dll
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Interop.WMPLib.dll
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.csproj.ResolveComReference.cache
+C:\Users\compa\Desktop\UTN\00PyL\PrimerParcial\AriasMariano\Arias.Mariano\obj\Debug\Arias.Mariano.FrmVideos.resources

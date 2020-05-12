@@ -129,7 +129,13 @@ namespace Arias.Mariano
                     MessageBox.Show("El campo telefono requiere al menos 6 numeros");
                     return;
                 }
-            
+                int aux;
+                if (!int.TryParse(txtTelefono.Text, out aux))
+                {
+                    MessageBox.Show("El campo Telefono solo acepta numeros");
+                    return;
+                }
+
                 nuevoResponsable = new Responsable(txtApellidoResp.Text, txtNombreResp.Text, dniR, femeninoAux, (EParentesco)cmbBoxRelacion.SelectedItem, txtTelefono.Text);
                 nuevoAlumno.Responsable = nuevoResponsable;
 
